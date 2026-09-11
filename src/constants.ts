@@ -1,0 +1,1 @@
+export const TailscaleAPIBaseURL = "https://api.tailscale.com/api/v2"; // Official Tailscale API Base URL
