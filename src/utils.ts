@@ -4,7 +4,7 @@ export function authorisedFetch(url: string, authToken: string, otherOptions?: R
   return fetch(url, {
         headers: {
           Authorization: `Bearer ${authToken}`,
-          ...(requiresJSONContentHeader ? { "Content-Type": "application/json" } : {})
+          ...(requiresJSONContentHeader ? { "Content-Type": "application/json", "Accept": "application/json" } : {})
         },
         ...otherOptions
   });
