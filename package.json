@@ -1,0 +1,24 @@
+{
+  "name": "@vedanshshetti/tailscale-api-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper around the Tailscale API (community-made, not official).",
+  "keywords": [
+    "tailscale"
+  ],
+  "homepage": "https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API#readme",
+  "bugs": {
+    "url": "https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API.git"
+  },
+  "license": "EUPL-1.2",
+  "author": "Vedansh Shetti <vedansh.shetti@gmail.com>",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc"
+  }
+}
