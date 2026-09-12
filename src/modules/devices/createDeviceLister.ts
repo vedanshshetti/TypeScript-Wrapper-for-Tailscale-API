@@ -4,7 +4,7 @@ import { authorisedFetch, buildErrorMessage, hideApiKey } from "../../utils";
 
 export type ListTailnetDevicesReturnType = {
   devices: {
-    addresses: string[];
+    addresses:               string[];
     id: string;
     nodeId: string;
     user: string;
@@ -60,11 +60,22 @@ export type ListTailnetDevicesReturnType = {
   }[];
 };
 
-
-export default async function createDeviceLister(apiKey: APIKey, tailnet: string): Promise<ListTailnetDevicesReturnType> {
-    const req = await authorisedFetch(`${TailscaleAPIBaseURL}/tailnet/${tailnet}/devices`, apiKey);
-    if (!req.ok) throw new Error(buildErrorMessage(`Operation devices.listTailnetDevices with API Key ${hideApiKey(apiKey)} failed;
+export default async function createDeviceLister(
+  apiKey: APIKey,
+  tailnet: string
+): Promise<ListTailnetDevicesReturnType> {
+  const req = await authorisedFetch(
+    `${TailscaleAPIBaseURL}/tailnet/${tailnet}/devices`,
+    apiKey
+  );
+  if (!req.ok)
+    throw new Error(
+      buildErrorMessage(
+        `Operation devices.listTailnetDevices with API Key ${hideApiKey(apiKey)} failed;
      Tailscale API returned a status code of ${req.status} with
-     status text of "${req.statusText}"`, req));
-    return await req.json() as ListTailnetDevicesReturnType;
-};
+     status text of "${req.statusText}"`,
+        req
+      )
+    );
+  return (await req.json()) as ListTailnetDevicesReturnType;
+}
