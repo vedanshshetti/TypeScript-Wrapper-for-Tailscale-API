@@ -3,6 +3,9 @@ export type APIKey = `tskey-api-${string}`;
 export type Route = `${number}.${number}.${number}.${number}/${number}`;
 
 type Digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+
+export type DNSNameserver = `${number}.${number}.${number}.${number}` | string;
+
 export type IPAddress = `100.${number}.${number}.${number}`;
 export type IPAddressWithPort = `${IPAddress}:${number}`;
 export type ISO8601TimeStamp =
@@ -33,3 +36,6 @@ export type {
 export type { ListTailnetKeysReturnType } from "./modules/keys/createTailnetKeysList";
 export type { TailscaleKey } from "./modules/keys/createKeyCreation";
 export type { SetKeyBody } from "./modules/keys/createKeySetter";
+
+// Types for DNS Interface
+export type { ListNameserversReturnType } from "./modules/dns/createDNSNameserverLister";

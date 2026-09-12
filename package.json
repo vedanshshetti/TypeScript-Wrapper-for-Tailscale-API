@@ -5,13 +5,13 @@
   "keywords": [
     "tailscale"
   ],
-  "homepage": "https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API#readme",
+  "homepage": "https://github.com/vedanshshetti/tailscaleapi-tssdk#readme",
   "bugs": {
-    "url": "https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API/issues"
+    "url": "https://github.com/vedanshshetti/tailscaleapi-tssdk/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vedanshshetti/TypeScript-Wrapper-for-Tailscale-API.git"
+    "url": "git+https://github.com/vedanshshetti/tailscaleapi-tssdk.git"
   },
   "license": "EUPL-1.2",
   "author": "Vedansh Shetti <vedansh.shetti@gmail.com>",

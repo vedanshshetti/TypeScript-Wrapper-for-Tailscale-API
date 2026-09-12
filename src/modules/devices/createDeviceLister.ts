@@ -4,7 +4,7 @@ import { authorisedFetch, buildErrorMessage, hideApiKey } from "../../utils";
 
 export type ListTailnetDevicesReturnType = {
   devices: {
-    addresses:               string[];
+    addresses: string[];
     id: string;
     nodeId: string;
     user: string;
