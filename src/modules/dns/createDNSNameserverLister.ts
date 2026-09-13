@@ -9,7 +9,7 @@ export type ListNameserversReturnType = {
 export default async function createDNSNameserverLister(
   apiKey: APIKey,
   tailnet: string
-) {
+): Promise<ListNameserversReturnType> {
   const req = await authorisedFetch(
     `${TailscaleAPIBaseURL}/tailnet/${tailnet}/dns/nameservers`,
     apiKey
@@ -23,5 +23,5 @@ export default async function createDNSNameserverLister(
         req
       )
     );
-  return await req.json();
+  return (await req.json()) as ListNameserversReturnType;
 }

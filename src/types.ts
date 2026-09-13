@@ -39,3 +39,4 @@ export type { SetKeyBody } from "./modules/keys/createKeySetter";
 
 // Types for DNS Interface
 export type { ListNameserversReturnType } from "./modules/dns/createDNSNameserverLister";
+export type { SetNameserversReturnType } from "./modules/dns/createDNSNameserverSetter";

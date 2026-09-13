@@ -23,7 +23,7 @@ import {
   SetCustomDevicePostureAttributesBody,
   SetDeviceRoutesBody,
   SetDeviceRoutesReturnType,
-  UpdateCustomDevicePostureAttributesBody,
+  UpdateCustomDevicePostureAttributesBody
 } from "../types";
 
 const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
@@ -34,7 +34,7 @@ const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
      * @returns {Promise<ListTailnetDevicesReturnType>} A list of devices with additional data.
      */
     listTailnetDevices: (
-      tailnet: string,
+      tailnet: string
     ): Promise<ListTailnetDevicesReturnType> =>
       createDeviceLister(apiKey, tailnet),
     /**
@@ -49,7 +49,7 @@ const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
      * @returns {Promise<void>} Void if successful, else throws an error.
      */
     batchUpdateCustomDevicePostureAttributes: (
-      body: UpdateCustomDevicePostureAttributesBody,
+      body: UpdateCustomDevicePostureAttributesBody
     ): Promise<void> =>
       createCustomDeviceBatchPostureAttributesUpdater(apiKey, deviceID, body),
     /**
@@ -75,7 +75,7 @@ const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
      * @returns {Promise<SetDeviceRoutesReturnType>} An Object containing the newly updated routes.
      */
     setDeviceRoutes: (
-      body: SetDeviceRoutesBody,
+      body: SetDeviceRoutesBody
     ): Promise<SetDeviceRoutesReturnType> =>
       createDeviceRouteSetter(apiKey, deviceID, body),
     /**
@@ -126,7 +126,7 @@ const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
      * @returns {Promise<GetDevicePostureAttributesReturnType>} An object with the updated device posture attributes and their expiries if set.
      */
     setCustomDevicePostureAttributes: (
-      attribute: SetCustomDevicePostureAttributesBody,
+      attribute: SetCustomDevicePostureAttributesBody
     ): Promise<GetDevicePostureAttributesReturnType> =>
       createCustomDevicePostureAttributesSetter(apiKey, deviceID, attribute),
     /**
@@ -135,13 +135,13 @@ const createDevicesInterface = (apiKey: APIKey, deviceID: string) => {
      * @returns {Promise<void>} Void if successful, else throws an error.
      */
     deleteCustomDevicePostureAttributes: (
-      attributeKey: string,
+      attributeKey: string
     ): Promise<void> =>
       createCustomDevicePostureAttributesDeletion(
         apiKey,
         deviceID,
-        attributeKey,
-      ),
+        attributeKey
+      )
   };
 };
 

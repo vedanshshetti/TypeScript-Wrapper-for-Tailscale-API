@@ -58,11 +58,22 @@ export type GetDeviceReturnType = {
   };
 };
 
-
-export default async function createDeviceRetriever(apiKey: APIKey, deviceID: string): Promise<GetDeviceReturnType> {
-    const req = await authorisedFetch(`${TailscaleAPIBaseURL}/device/${deviceID}`, apiKey);
-    if (!req.ok) throw new Error(buildErrorMessage(`Operation devices.getDevice with API Key ${hideApiKey(apiKey)} failed;
+export default async function createDeviceRetriever(
+  apiKey: APIKey,
+  deviceID: string
+): Promise<GetDeviceReturnType> {
+  const req = await authorisedFetch(
+    `${TailscaleAPIBaseURL}/device/${deviceID}`,
+    apiKey
+  );
+  if (!req.ok)
+    throw new Error(
+      buildErrorMessage(
+        `Operation devices.getDevice with API Key ${hideApiKey(apiKey)} failed;
      Tailscale API returned a status code of ${req.status} with
-     status text of "${req.statusText}".`, req));
-    return await req.json() as GetDeviceReturnType;
-};
+     status text of "${req.statusText}".`,
+        req
+      )
+    );
+  return (await req.json()) as GetDeviceReturnType;
+}

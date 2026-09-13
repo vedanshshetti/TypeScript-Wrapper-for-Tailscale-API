@@ -1,6 +1,6 @@
 {
   "name": "@vedanshshetti/tailscale-api-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper around the Tailscale API (community-made, not official).",
   "keywords": [
     "tailscale"

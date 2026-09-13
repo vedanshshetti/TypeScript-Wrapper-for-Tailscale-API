@@ -34,5 +34,5 @@ export default async function createKeySetter(
         req
       )
     );
-  return await req.json() as TailscaleKey;
+  return (await req.json()) as TailscaleKey;
 }

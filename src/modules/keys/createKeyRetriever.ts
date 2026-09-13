@@ -3,36 +3,36 @@ import { APIKey, ISO8601TimeStamp } from "../../types";
 import { authorisedFetch, buildErrorMessage, hideApiKey } from "../../utils";
 
 export type ListTailnetKeysReturnType = {
-    id: string;
-    key?: string;
-    keyType: "auth" | "client" | "api" | "federated";
-    expirySeconds?: number;
-    created: ISO8601TimeStamp;
-    updated?: string;
-    expires?: string;
-    revoked?: string;
-    capabilities?: {
-      devices?: {
-        create?: {
-          reusable?: boolean;
-          ephemeral?: boolean;
-          preauthorized?: boolean;
-          tags?: string[];
-        };
+  id: string;
+  key?: string;
+  keyType: "auth" | "client" | "api" | "federated";
+  expirySeconds?: number;
+  created: ISO8601TimeStamp;
+  updated?: string;
+  expires?: string;
+  revoked?: string;
+  capabilities?: {
+    devices?: {
+      create?: {
+        reusable?: boolean;
+        ephemeral?: boolean;
+        preauthorized?: boolean;
+        tags?: string[];
       };
     };
-    scopes?: string[];
-    tags?: string[];
-    description?: string;
-    invalid?: boolean;
-    userId?: string;
-    audience?: string;
-    issuer?: string;
-    subject?: string;
-    customClaimRules?: {
-      [claimName: string]: string;
-    };
   };
+  scopes?: string[];
+  tags?: string[];
+  description?: string;
+  invalid?: boolean;
+  userId?: string;
+  audience?: string;
+  issuer?: string;
+  subject?: string;
+  customClaimRules?: {
+    [claimName: string]: string;
+  };
+};
 
 export default async function createTailnetKeysLister(
   apiKey: APIKey,
